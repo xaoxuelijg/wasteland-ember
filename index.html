@@ -37,8 +37,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 @keyframes lowhp{from{background:#a02622}to{background:var(--red2)}}
 
 /* ===== 主菜单（两级） ===== */
-#screen-menu{position:relative;align-items:center;justify-content:center;gap:26px;padding:20px}
-#screen-setup{position:relative;align-items:center;justify-content:center;gap:16px;padding:20px;overflow-y:auto}
+#screen-menu{position:relative;align-items:center;justify-content:center;justify-content:safe center;gap:26px;padding:20px;overflow-y:auto;overscroll-behavior:contain}
+#screen-setup{position:relative;align-items:center;justify-content:center;justify-content:safe center;gap:16px;padding:20px;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+#screen-setup>*{flex-shrink:0}
 .bg-img{position:absolute;inset:0;background-size:cover;background-position:center;z-index:-2}
 .bg-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(43,38,32,.55),rgba(43,38,32,.82))}
 #menu-title{font-size:52px;letter-spacing:14px;color:var(--ember);text-shadow:0 0 24px rgba(230,126,34,.6),0 3px 0 #1a1712;font-weight:900;text-align:center}
@@ -300,6 +301,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   #hand-row{min-height:140px}
   #topbar{padding:4px 12px}
   .ov-panel{padding:20px 26px;gap:12px}
+  #screen-menu{justify-content:flex-start;padding:8px 12px}
 }
 /* ===== 手机竖屏（扫码试玩） ===== */
 @media (max-width:600px){
@@ -331,7 +333,18 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   .btn.menu-main{font-size:15px;padding:10px 30px;letter-spacing:6px}
   .selcard-grid{grid-template-columns:repeat(auto-fill,72px)}
   .chip-row{max-width:92vw}
+  /* 开局设置：可从上往下滚动，卡片两列排布 */
+  #screen-setup{justify-content:flex-start;padding:12px 10px calc(20px + env(safe-area-inset-bottom))}
+  #screen-setup .pick-label{margin-top:2px;font-size:11px;letter-spacing:2px}
+  .pick-row{gap:8px;width:100%}
+  .pick-card{width:calc(50% - 8px);min-width:0;padding:8px 6px;gap:4px}
+  .pick-card img{height:84px}
+  .pick-card .pc-name{font-size:13px;letter-spacing:1px}
+  .pick-card .pc-desc{font-size:10px;line-height:1.35;min-height:27px}
+  .pick-card.locked::after{font-size:10px;line-height:1.3;padding:4px}
+  #btn-start{margin-top:6px;padding:11px 40px;font-size:16px}
 }
+#app{height:100vh;height:100dvh}
 </style>
 </head>
 <body>
