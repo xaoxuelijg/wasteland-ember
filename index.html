@@ -301,6 +301,37 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   #topbar{padding:4px 12px}
   .ov-panel{padding:20px 26px;gap:12px}
 }
+/* ===== 手机竖屏（扫码试玩） ===== */
+@media (max-width:600px){
+  #topbar{gap:8px;padding:4px 8px;font-size:11px}
+  #enemy-band{padding:4px 8px 2px}
+  #enemy-name{font-size:15px;letter-spacing:1px}
+  #enemy-hp-wrap{width:min(360px,72vw)}
+  .portrait{width:72px}
+  #player-band{gap:8px;padding:4px 8px}
+  .pip{width:11px;height:17px}
+  #energy-label{font-size:10px}
+  #btn-end{padding:6px 12px;font-size:12px}
+  #hand-row{min-height:116px;gap:6px;justify-content:flex-start;overflow-x:auto;overflow-y:hidden;padding:2px 8px 6px}
+  #hand-row::-webkit-scrollbar{display:none}
+  .card{width:72px;height:104px;border-width:2px}
+  .card .c-art{height:44px}
+  .card .c-name{font-size:9px}
+  .card .c-text{font-size:8px;line-height:1.25}
+  #stage-cards .card{width:64px;height:92px}
+  #stage-intent{font-size:11px;padding:6px 12px}
+  #banner{font-size:18px;letter-spacing:3px}
+  #bottombar{font-size:10px;padding:4px 8px}
+  .draft-card{width:132px;padding:12px 10px}
+  .draft-card .d-icon{font-size:28px}
+  .ov-panel{padding:14px 12px;gap:10px;max-width:94vw}
+  .ov-title{font-size:19px;letter-spacing:4px}
+  .pick-card{width:122px}
+  #menu-title{font-size:26px;letter-spacing:5px}
+  .btn.menu-main{font-size:15px;padding:10px 30px;letter-spacing:6px}
+  .selcard-grid{grid-template-columns:repeat(auto-fill,72px)}
+  .chip-row{max-width:92vw}
+}
 </style>
 </head>
 <body>
